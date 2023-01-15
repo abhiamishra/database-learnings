@@ -1,0 +1,34 @@
+# notes
+- document database
+- all data is stored in json like objects -> stored in collections that can be queried
+- allows data to be frequently accessed to be grouped together
+- database is easier to horizontally scale via sharding
+    - sharding
+- new document has an object id
+    - unique to that collection
+    - can define multiple fields which correspond to different data types
+- to make access faster
+    - secondary indices can be made
+- aggregation pipeline can be made
+- document-oriented, noSQL database
+    - document based: represents hierarchical relationship using a single record
+    - schema free: lesser data migrations
+- data is stored in documents with key-value pairs
+    - converts json to binary format
+    - all documents are stored in a collection
+    - these collections are stored in the MongoDB database
+
+# how does no-sql work?
+- relational databases can scale vertically not horizontally
+    - vertical scaling: add more floors
+    - horizontal scaling: add more buildings
+- no-sql get rid of relationships and as such, stands on its own
+    - key-value stores
+- primary key
+    - key allows us to pick which partition contains data
+    - primary key is converted to hash value
+    - this allows us to choose where to store the item
+    - put everthing on a single server
+    - the range of the hash of the key: keyspace
+- schema-less
+- big collections and have small documents

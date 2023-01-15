@@ -17,3 +17,11 @@
 - where method to filter documents in a collection based on a field
 - orderby - returns documents in a specific order
 - .limit(n) - n documents are shown
+
+# storage
+- cloud storage for user generated content
+
+# functions
+- own node.js server that runs on demand
+- write microservices that perform a specific function
+- anything you can do node.js -> you can do in functions
