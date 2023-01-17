@@ -32,3 +32,62 @@
     - the range of the hash of the key: keyspace
 - schema-less
 - big collections and have small documents
+
+# monogsh
+- view database: show dbs 
+- use database: use name_db
+- show collections: show collections
+- delete database: db.dropDatabase()
+- clear screen: cls
+- you dont create table or collections
+    - if it doesnt exist, it will be creatd
+- exit: exit out of mongosh
+- create database: db
+- db.name_of_collection = creates collection
+- db.insertOne({}) = insert one document in the collection
+- .find() - find all documents
+- ObjectId - created very similar to primary key in sqls
+- insertMany() -> takes array of objects
+- querying:
+    - find() = every single thing
+    - find().limit(n) = limit to certain results
+    - find().sort({x:1/-1}) = 1 -> increasing ; -1 -> decreasing 
+        - can sort by multiple fields by adding a comma
+    - find().skip(n) - skip the nth entry
+    - find( {select what rows to return}). 
+        - x:1 -> show; x:0 -> don't show
+- complex queries:
+    - put another set of an object for the value
+    - .find({ name: {complex query is here} })
+        - $eq = equals
+        - $ne = not equals
+        - $gt = greater than
+            - compare two things in columns: ["$a", "$b"] => a>b
+        - $gte = greater than equal to
+        - $lte = less than equal to
+        - $lt = less than
+        - $in = allows us to do OR operations
+        - $nin = opposite of in
+        - $exists = check for exists
+            - only checks to see if key exists and not the value of the value
+        - when you add commas inside the {}, it functions as AND
+        - $and = takes an array of factors that you put inside the .find()
+        - $or = OR 
+        - $not = negates everything inside it
+        - $expr = a mathematical expression
+        - for nested data: do outside.inside: value
+        - countDocuments() => counts documents
+- update data
+    - updateOne({filter}. {set})
+        - for set: use $set to set for specific fields
+    - $inc: increments value by the value provided
+    - $rename: renames a column
+    - $unset: removing it completely from the document
+    - $push: pushes two values into one list
+    - $pull: removes a value from a list
+    - updateMany() -> updates many
+    - replaceOne() -> everything at that location and deletes it
+- delete data
+    - deleteOne() -> deletes data
+    - deleteMany() -> deletes many
+
